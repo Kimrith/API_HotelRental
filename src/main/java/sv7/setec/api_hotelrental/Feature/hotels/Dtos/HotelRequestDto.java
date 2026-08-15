@@ -1,4 +1,4 @@
-package Feature.hotels.Dtos;
+package sv7.setec.api_hotelrental.Feature.hotels.Dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

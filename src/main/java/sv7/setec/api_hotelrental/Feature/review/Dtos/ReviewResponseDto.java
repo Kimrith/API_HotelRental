@@ -1,4 +1,4 @@
-package Feature.review.Dtos;
+package sv7.setec.api_hotelrental.Feature.review.Dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

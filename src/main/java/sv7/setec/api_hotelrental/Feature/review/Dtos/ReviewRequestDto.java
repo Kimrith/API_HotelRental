@@ -1,4 +1,4 @@
-package Feature.review.Dtos;
+package sv7.setec.api_hotelrental.Feature.review.Dtos;
 
 import jakarta.validation.constraints.Max;
 import jakarta.validation.constraints.Min;

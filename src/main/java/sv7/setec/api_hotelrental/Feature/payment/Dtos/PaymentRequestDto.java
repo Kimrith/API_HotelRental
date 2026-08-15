@@ -1,4 +1,4 @@
-package Feature.payment.Dtos;
+package sv7.setec.api_hotelrental.Feature.payment.Dtos;
 
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotNull;

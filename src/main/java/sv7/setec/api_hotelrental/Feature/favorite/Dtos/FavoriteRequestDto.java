@@ -1,4 +1,4 @@
-package Feature.favorite.Dtos;
+package sv7.setec.api_hotelrental.Feature.favorite.Dtos;
 
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;

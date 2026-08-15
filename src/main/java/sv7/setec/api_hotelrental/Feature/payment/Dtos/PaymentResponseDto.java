@@ -1,4 +1,4 @@
-package Feature.payment.Dtos;
+package sv7.setec.api_hotelrental.Feature.payment.Dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

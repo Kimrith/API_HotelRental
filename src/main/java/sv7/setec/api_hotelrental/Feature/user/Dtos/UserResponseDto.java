@@ -1,6 +1,6 @@
-package Feature.user.Dtos;
+package sv7.setec.api_hotelrental.Feature.user.Dtos;
 
-import Feature.enums.Role;
+import sv7.setec.api_hotelrental.Feature.enums.Role;
 import lombok.Data;
 
 import java.time.LocalDateTime;

@@ -1,6 +1,6 @@
-package Feature.user.Dtos;
+package sv7.setec.api_hotelrental.Feature.user.Dtos;
 
-import Feature.enums.Role;
+import sv7.setec.api_hotelrental.Feature.enums.Role;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

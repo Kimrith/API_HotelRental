@@ -1,4 +1,4 @@
-package Feature.user.Dtos;
+package sv7.setec.api_hotelrental.Feature.user.Dtos;
 
 import jakarta.validation.constraints.NotBlank;
 import lombok.Data;

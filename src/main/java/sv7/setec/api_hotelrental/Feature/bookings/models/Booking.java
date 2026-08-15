@@ -1,6 +1,6 @@
-package Feature.bookings.models;
+package sv7.setec.api_hotelrental.Feature.bookings.models;
 
-import Feature.enums.BookingStatus;
+import sv7.setec.api_hotelrental.Feature.enums.BookingStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

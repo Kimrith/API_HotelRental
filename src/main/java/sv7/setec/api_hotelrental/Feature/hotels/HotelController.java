@@ -1,4 +1,4 @@
-package Feature.hotels;
+package sv7.setec.api_hotelrental.Feature.hotels;
 
 public class HotelController {
 }

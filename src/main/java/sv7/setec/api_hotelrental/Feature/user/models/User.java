@@ -1,6 +1,6 @@
-package Feature.user.models;
+package sv7.setec.api_hotelrental.Feature.user.models;
 
-import Feature.enums.Role; // <-- Import the global Role enum
+import sv7.setec.api_hotelrental.Feature.enums.Role; // <-- Import the global Role enum
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;

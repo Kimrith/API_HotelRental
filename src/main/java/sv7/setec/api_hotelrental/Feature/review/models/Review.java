@@ -1,4 +1,4 @@
-package Feature.review.models;
+package sv7.setec.api_hotelrental.Feature.review.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;

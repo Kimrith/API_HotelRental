@@ -1,4 +1,4 @@
-package Config;
+package sv7.setec.api_hotelrental.Config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;

@@ -1,4 +1,4 @@
-package Config;
+package sv7.setec.api_hotelrental.Config;
 
 import io.swagger.v3.oas.models.OpenAPI;
 import io.swagger.v3.oas.models.info.Info;

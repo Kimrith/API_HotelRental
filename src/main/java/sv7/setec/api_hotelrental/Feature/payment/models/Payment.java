@@ -1,7 +1,7 @@
-package Feature.payment.models;
+package sv7.setec.api_hotelrental.Feature.payment.models;
 
-import Feature.enums.PaymentMethod;
-import Feature.enums.PaymentStatus;
+import sv7.setec.api_hotelrental.Feature.enums.PaymentMethod;
+import sv7.setec.api_hotelrental.Feature.enums.PaymentStatus;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
