@@ -17,8 +17,14 @@ public class HotelImageService {
 
     private final HotelImageRepository hotelImageRepository;
     private final HotelRepository hotelRepository;
+    private final FileStorageService fileStorageService;
 
+    @Transactional(readOnly = true)
     public List<HotelImageResponseDto> getImagesByHotelId(Integer hotelId) {
+        if (!hotelRepository.existsById(hotelId)) {
+            throw new RuntimeException("Hotel not found with id: " + hotelId);
+        }
+
         return hotelImageRepository.findByHotelIdOrderByOrderIndexAsc(hotelId)
                 .stream()
                 .map(this::mapToResponseDto)
@@ -30,11 +36,28 @@ public class HotelImageService {
         Hotel hotel = hotelRepository.findById(requestDto.getHotelId())
                 .orElseThrow(() -> new RuntimeException("Hotel not found with id: " + requestDto.getHotelId()));
 
+        // Save physical file via your storage service
+        String storedPath = fileStorageService.storeFile(requestDto.getFile());
+        boolean isBanner = Boolean.TRUE.equals(requestDto.getIsBanner());
+
+        // If newly uploaded image is marked as banner, unset any existing banner
+        if (isBanner) {
+            hotelImageRepository.findByHotelIdAndIsBannerTrue(hotel.getId())
+                    .ifPresent(existingBanner -> {
+                        existingBanner.setIsBanner(false);
+                        hotelImageRepository.save(existingBanner);
+                    });
+        }
+
+        int orderIndex = (requestDto.getOrderIndex() != null)
+                ? requestDto.getOrderIndex()
+                : hotelImageRepository.countByHotelId(hotel.getId());
+
         HotelImage hotelImage = HotelImage.builder()
                 .hotel(hotel)
-                .imageUrl(requestDto.getImageUrl())
-                .isBanner(requestDto.getIsBanner() != null ? requestDto.getIsBanner() : false)
-                .orderIndex(requestDto.getOrderIndex() != null ? requestDto.getOrderIndex() : 0)
+                .imageUrl(storedPath)
+                .isBanner(isBanner)
+                .orderIndex(orderIndex)
                 .build();
 
         HotelImage savedImage = hotelImageRepository.save(hotelImage);

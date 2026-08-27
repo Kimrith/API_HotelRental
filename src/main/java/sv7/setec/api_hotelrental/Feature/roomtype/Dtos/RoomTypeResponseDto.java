@@ -7,7 +7,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @Data
 @Builder
@@ -35,7 +34,4 @@ public class RoomTypeResponseDto {
 
     @Schema(description = "Search keywords", example = "ocean view, king bed, balcony")
     private String searchKeywords;
-
-    @Schema(description = "List of image URLs associated with this room type")
-    private List<String> imageUrls;
 }

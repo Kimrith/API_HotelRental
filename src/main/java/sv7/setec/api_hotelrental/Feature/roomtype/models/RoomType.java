@@ -1,10 +1,12 @@
 package sv7.setec.api_hotelrental.Feature.roomtype.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sv7.setec.api_hotelrental.Feature.hotels.models.Hotel;
 
 import java.math.BigDecimal;
 
@@ -20,8 +22,10 @@ public class RoomType {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "hotel_id", nullable = false)
-    private Long hotelId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "hotel_id", nullable = false)
+    @JsonBackReference
+    private Hotel hotel;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -46,12 +50,12 @@ public class RoomType {
         this.id = id;
     }
 
-    public Long getHotelId() {
-        return hotelId;
+    public Hotel getHotel() {
+        return hotel;
     }
 
-    public void setHotelId(Long hotelId) {
-        this.hotelId = hotelId;
+    public void setHotel(Hotel hotel) {
+        this.hotel = hotel;
     }
 
     public String getName() {
