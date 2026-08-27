@@ -1,39 +1,28 @@
 package sv7.setec.api_hotelrental.Feature.room_type_images.Dtos;
 
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Min;
-import jakarta.validation.constraints.NotBlank;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.math.BigDecimal;
+import org.springframework.web.multipart.MultipartFile;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class RoomTypeImagesRequestDto {
 
-    @NotNull(message = "Hotel ID is required")
-    private Long hotelId;
+    @NotNull(message = "Room type ID is required")
+    @Schema(description = "ID of the room type", example = "1")
+    private Long roomTypeId;
 
-    @NotBlank(message = "Room name is required")
-    private String roomName;
+    @NotNull(message = "Image file is required")
+    @Schema(description = "Image file to upload", type = "string", format = "binary")
+    private MultipartFile file;
 
-    @NotBlank(message = "Room number is required")
-    private String roomNumber;
-
-    @NotBlank(message = "Room type is required")
-    private String roomType; // e.g., Single, Double, Suite
-
-    @NotNull(message = "Price is required")
-    @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater than zero")
-    private BigDecimal price;
-
-    @NotNull(message = "Stock is required")
-    @Min(value = 0, message = "Stock cannot be negative")
-    private Integer stock;
-
-    private String description;
+    @Schema(description = "Indicates whether this image is the cover/primary image", example = "false")
+    @Builder.Default
+    private Boolean isPrimary = false;
 }

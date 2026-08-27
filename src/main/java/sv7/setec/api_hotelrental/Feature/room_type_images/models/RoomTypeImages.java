@@ -1,15 +1,17 @@
 package sv7.setec.api_hotelrental.Feature.room_type_images.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.math.BigDecimal;
+import sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType;
 
 @Entity
-@Table(name = "rooms")
+@Table(name = "room_type_images")
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class RoomTypeImages {
@@ -18,34 +20,10 @@ public class RoomTypeImages {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "hotel_id", nullable = false)
-    private Long hotelId; // Can also be mapped as a @ManyToOne relationship to a Hotel entity later
-
-    @Column(name = "room_name", nullable = false)
-    private String roomName;
-
-    @Column(name = "room_number", nullable = false)
-    private String roomNumber;
-
-    @Column(name = "room_type", nullable = false)
-    private String roomType; // e.g., Single, Double, Suite, Deluxe
-
-    @Column(nullable = false)
-    private BigDecimal price;
-
-    @Column(nullable = false)
-    private Integer stock; // Quantity available or status tracking
-
-    @Column(columnDefinition = "TEXT")
-    private String description;
-
-    public String getRoomName() {
-        return roomName;
-    }
-
-    public void setRoomName(String roomName) {
-        this.roomName = roomName;
-    }
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_type_id", nullable = false)
+    @JsonBackReference
+    private RoomType roomType;
 
     public Long getId() {
         return id;
@@ -55,51 +33,34 @@ public class RoomTypeImages {
         this.id = id;
     }
 
-    public Long getHotelId() {
-        return hotelId;
-    }
-
-    public void setHotelId(Long hotelId) {
-        this.hotelId = hotelId;
-    }
-
-    public String getRoomNumber() {
-        return roomNumber;
-    }
-
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
-    }
-
-    public String getRoomType() {
+    public RoomType getRoomType() {
         return roomType;
     }
 
-    public void setRoomType(String roomType) {
+    public void setRoomType(RoomType roomType) {
         this.roomType = roomType;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 
-    public Integer getStock() {
-        return stock;
+    public Boolean getPrimary() {
+        return isPrimary;
     }
 
-    public void setStock(Integer stock) {
-        this.stock = stock;
+    public void setPrimary(Boolean primary) {
+        isPrimary = primary;
     }
 
-    public String getDescription() {
-        return description;
-    }
+    @Column(name = "image_url", nullable = false)
+    private String imageUrl;
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+    @Column(name = "is_primary")
+    @Builder.Default
+    private Boolean isPrimary = false;
 }

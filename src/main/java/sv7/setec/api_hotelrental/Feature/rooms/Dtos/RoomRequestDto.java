@@ -1,39 +1,32 @@
 package sv7.setec.api_hotelrental.Feature.rooms.Dtos;
 
-import jakarta.validation.constraints.DecimalMin;
-import jakarta.validation.constraints.Min;
+import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.math.BigDecimal;
+import sv7.setec.api_hotelrental.Feature.enums.RoomStatus;
 
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class RoomRequestDto {
 
     @NotNull(message = "Hotel ID is required")
+    @Schema(description = "ID of the hotel this room belongs to", example = "1")
     private Long hotelId;
 
-    @NotBlank(message = "Room name is required")
-    private String roomName;
+    @NotNull(message = "Room type ID is required")
+    @Schema(description = "ID of the room category/type", example = "2")
+    private Long roomTypeId;
 
     @NotBlank(message = "Room number is required")
+    @Schema(description = "Unique room identifier/door number", example = "101")
     private String roomNumber;
 
-    @NotBlank(message = "Room type is required")
-    private String roomType; // e.g., Single, Double, Suite
-
-    @NotNull(message = "Price is required")
-    @DecimalMin(value = "0.0", inclusive = false, message = "Price must be greater than zero")
-    private BigDecimal price;
-
-    @NotNull(message = "Stock is required")
-    @Min(value = 0, message = "Stock cannot be negative")
-    private Integer stock;
-
-    private String description;
+    @Schema(description = "Status of the room", example = "AVAILABLE")
+    private RoomStatus status;
 }

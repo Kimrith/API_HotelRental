@@ -2,13 +2,16 @@ package sv7.setec.api_hotelrental.Feature.rooms.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import java.math.BigDecimal;
+import sv7.setec.api_hotelrental.Feature.enums.RoomStatus;
+import sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType;
 
 @Entity
 @Table(name = "rooms")
 @Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Room {
@@ -18,48 +21,26 @@ public class Room {
     private Long id;
 
     @Column(name = "hotel_id", nullable = false)
-    private Long hotelId; // Can also be mapped as a @ManyToOne relationship to a Hotel entity later
+    private Long hotelId;
 
-    @Column(name = "room_name", nullable = false)
-    private String roomName;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "room_type_id", nullable = false)
+    private RoomType roomType;
 
     @Column(name = "room_number", nullable = false)
     private String roomNumber;
 
-    @Column(name = "room_type", nullable = false)
-    private String roomType; // e.g., Single, Double, Suite, Deluxe
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    @Builder.Default
+    private RoomStatus status = RoomStatus.AVAILABLE;
 
-    @Column(nullable = false)
-    private BigDecimal price;
-
-    @Column(nullable = false)
-    private Integer stock; // Quantity available or status tracking
-
-    @Column(columnDefinition = "TEXT")
-    private String description;
-
-    public String getRoomName() {
-        return roomName;
+    public RoomStatus getStatus() {
+        return status;
     }
 
-    public void setRoomName(String roomName) {
-        this.roomName = roomName;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getHotelId() {
-        return hotelId;
-    }
-
-    public void setHotelId(Long hotelId) {
-        this.hotelId = hotelId;
+    public void setStatus(RoomStatus status) {
+        this.status = status;
     }
 
     public String getRoomNumber() {
@@ -70,35 +51,27 @@ public class Room {
         this.roomNumber = roomNumber;
     }
 
-    public String getRoomType() {
+    public RoomType getRoomType() {
         return roomType;
     }
 
-    public void setRoomType(String roomType) {
+    public void setRoomType(RoomType roomType) {
         this.roomType = roomType;
     }
 
-    public BigDecimal getPrice() {
-        return price;
+    public Long getHotelId() {
+        return hotelId;
     }
 
-    public void setPrice(BigDecimal price) {
-        this.price = price;
+    public void setHotelId(Long hotelId) {
+        this.hotelId = hotelId;
     }
 
-    public Integer getStock() {
-        return stock;
+    public Long getId() {
+        return id;
     }
 
-    public void setStock(Integer stock) {
-        this.stock = stock;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
+    public void setId(Long id) {
+        this.id = id;
     }
 }
