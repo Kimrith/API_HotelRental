@@ -1,109 +1,57 @@
 package sv7.setec.api_hotelrental.Feature.hotels.models;
 
-import sv7.setec.api_hotelrental.Feature.enums.HotelStatus;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "hotels")
-@Data
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Hotel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
-    @Column(name = "owner_id", nullable = false)
-    private Long ownerId; // Links to the User who owns/manages this hotel
-
-    @Column(nullable = false)
+    @Column(name = "name", length = 150, nullable = false)
     private String name;
 
-    @Column(columnDefinition = "TEXT")
+    @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
-    @Column(nullable = false, columnDefinition = "TEXT")
+    @Column(name = "address", length = 255, nullable = false)
     private String address;
 
-    @Column(nullable = false)
+    @Column(name = "city", length = 100, nullable = false)
     private String city;
 
-    @Enumerated(EnumType.STRING)
-    @Column(nullable = false)
-    private HotelStatus status = HotelStatus.PENDING; // Default status upon creation
+    @Column(name = "latitude", precision = 10, scale = 8)
+    private BigDecimal latitude;
+
+    @Column(name = "longitude", precision = 11, scale = 8)
+    private BigDecimal longitude;
+
+    @Builder.Default
+    @Column(name = "deposit_percentage", nullable = false)
+    private Integer depositPercentage = 20;
+
+    @Column(name = "status", length = 20, nullable = false)
+    private String status;
 
     @CreationTimestamp
-    @Column(name = "created_at", updatable = false)
+    @Column(name = "created_at", nullable = false, updatable = false)
     private LocalDateTime createdAt;
 
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Long getOwnerId() {
-        return ownerId;
-    }
-
-    public void setOwnerId(Long ownerId) {
-        this.ownerId = ownerId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public void setCity(String city) {
-        this.city = city;
-    }
-
-    public HotelStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(HotelStatus status) {
-        this.status = status;
-    }
-
-    public LocalDateTime getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt) {
-        this.createdAt = createdAt;
-    }
+    @OneToMany(mappedBy = "hotel", cascade = CascadeType.ALL, orphanRemoval = true)
+    @Builder.Default
+    private List<HotelImage> images = new ArrayList<>();
 }
