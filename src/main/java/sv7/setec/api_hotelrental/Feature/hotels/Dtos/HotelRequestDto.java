@@ -1,34 +1,32 @@
 package sv7.setec.api_hotelrental.Feature.hotels.Dtos;
 
-import lombok.*;
+import jakarta.validation.constraints.NotBlank;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.List;
 
-@Getter
-@Setter
+@Data
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 public class HotelRequestDto {
+
+    @NotBlank(message = "Hotel name is required")
     private String name;
+
     private String description;
+
+    @NotBlank(message = "Address is required")
     private String address;
+
+    @NotBlank(message = "City is required")
     private String city;
+
     private BigDecimal latitude;
     private BigDecimal longitude;
     private Integer depositPercentage;
     private String status;
-    private List<ImageDto> images;
-
-    @Getter
-    @Setter
-    @NoArgsConstructor
-    @AllArgsConstructor
-    @Builder
-    public static class ImageDto {
-        private String imageUrl;
-        private Boolean isBanner;
-        private Integer orderIndex;
-    }
 }

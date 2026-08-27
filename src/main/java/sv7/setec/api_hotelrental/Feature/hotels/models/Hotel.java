@@ -3,6 +3,7 @@ package sv7.setec.api_hotelrental.Feature.hotels.models;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
+import sv7.setec.api_hotelrental.Feature.user.models.User; // Adjust package path if needed
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -46,6 +47,11 @@ public class Hotel {
 
     @Column(name = "status", length = 20, nullable = false)
     private String status;
+
+    // --- OWNER RELATIONSHIP (Fixes the missing column / symbol error) ---
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "owner_id", nullable = false)
+    private User owner;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)
