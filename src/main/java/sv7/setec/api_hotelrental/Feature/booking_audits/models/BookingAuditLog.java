@@ -1,4 +1,4 @@
-package sv7.setec.api_hotelrental.Feature.review.models;
+package sv7.setec.api_hotelrental.Feature.booking_audits.models;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -7,39 +7,34 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import sv7.setec.api_hotelrental.Feature.bookings.models.Booking;
-import sv7.setec.api_hotelrental.Feature.hotels.models.Hotel;
 import sv7.setec.api_hotelrental.Feature.user.models.User;
 import java.time.LocalDateTime;
 
 @Entity
-@Table(name = "reviews")
+@Table(name = "booking_audit_logs")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Review {
+public class BookingAuditLog {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "booking_id", nullable = false, unique = true)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "booking_id", nullable = false)
     private Booking booking;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "user_id", nullable = false)
-    private User user;
+    @JoinColumn(name = "actor_user_id", nullable = false)
+    private User actor;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "hotel_id", nullable = false)
-    private Hotel hotel;
+    @Column(name = "action", nullable = false)
+    private String action;
 
-    @Column(name = "rating", nullable = false)
-    private Integer rating;
-
-    @Column(name = "comment", columnDefinition = "TEXT")
-    private String comment;
+    @Column(name = "reason", columnDefinition = "TEXT")
+    private String reason;
 
     @CreationTimestamp
     @Column(name = "created_at", nullable = false, updatable = false)

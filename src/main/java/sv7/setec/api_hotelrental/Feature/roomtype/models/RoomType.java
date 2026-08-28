@@ -6,6 +6,8 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sv7.setec.api_hotelrental.Feature.enums.RoomStatus;
+import sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus;
 import sv7.setec.api_hotelrental.Feature.hotels.models.Hotel;
 
 import java.math.BigDecimal;
@@ -36,65 +38,14 @@ public class RoomType {
     @Column(name = "max_guests", nullable = false)
     private Integer maxGuests;
 
+    @Enumerated(EnumType.STRING)
+    @Column(name = "status", nullable = false)
+    @Builder.Default
+    private RoomTypeStatus status = RoomTypeStatus.AVAILABLE;
+
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
 
     @Column(name = "search_keywords", columnDefinition = "TEXT")
     private String searchKeywords;
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public Hotel getHotel() {
-        return hotel;
-    }
-
-    public void setHotel(Hotel hotel) {
-        this.hotel = hotel;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public BigDecimal getBasePrice() {
-        return basePrice;
-    }
-
-    public void setBasePrice(BigDecimal basePrice) {
-        this.basePrice = basePrice;
-    }
-
-    public Integer getMaxGuests() {
-        return maxGuests;
-    }
-
-    public void setMaxGuests(Integer maxGuests) {
-        this.maxGuests = maxGuests;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public String getSearchKeywords() {
-        return searchKeywords;
-    }
-
-    public void setSearchKeywords(String searchKeywords) {
-        this.searchKeywords = searchKeywords;
-    }
 }

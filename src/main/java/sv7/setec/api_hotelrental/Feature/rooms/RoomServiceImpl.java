@@ -1,103 +1,115 @@
 package sv7.setec.api_hotelrental.Feature.rooms;
 
+import sv7.setec.api_hotelrental.Feature.rooms.Dtos.*;
+import sv7.setec.api_hotelrental.Feature.rooms.models.Room;
+import sv7.setec.api_hotelrental.Feature.enums.RoomStatus;
+import sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType;
+import jakarta.persistence.EntityNotFoundException;
+import jakarta.persistence.criteria.Predicate;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import sv7.setec.api_hotelrental.Feature.enums.RoomStatus;
-import sv7.setec.api_hotelrental.Feature.rooms.Dtos.RoomRequestDto;
-import sv7.setec.api_hotelrental.Feature.rooms.Dtos.RoomResponseDto;
-import sv7.setec.api_hotelrental.Feature.rooms.models.Room;
-import sv7.setec.api_hotelrental.Feature.roomtype.RoomtypeRepository;
-import sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
 public class RoomServiceImpl implements RoomService {
 
     private final RoomRepository roomRepository;
-    private final RoomtypeRepository roomtypeRepository;
+    // Inject RoomTypeRepository if you need to fetch/validate the RoomType entity
+    // private final RoomTypeRepository roomTypeRepository;
 
     @Override
-    @Transactional
-    public RoomResponseDto createRoom(RoomRequestDto requestDto) {
-        RoomType roomType = roomtypeRepository.findById(requestDto.getRoomTypeId())
-                .orElseThrow(() -> new RuntimeException("RoomType not found with ID: " + requestDto.getRoomTypeId()));
+    @Transactional(readOnly = true)
+    public PageResponse<RoomResponseDto> getAllRooms(
+            Long hotelId,
+            Long roomTypeId,
+            RoomStatus status,
+            String roomNumber,
+            int page,
+            int size,
+            String sortBy,
+            String sortDir
+    ) {
+        Sort sort = sortDir.equalsIgnoreCase(Sort.Direction.DESC.name())
+                ? Sort.by(sortBy).descending()
+                : Sort.by(sortBy).ascending();
+        Pageable pageable = PageRequest.of(page, size, sort);
 
-        if (roomRepository.existsByHotelIdAndRoomNumber(requestDto.getHotelId(), requestDto.getRoomNumber())) {
-            throw new RuntimeException("Room number " + requestDto.getRoomNumber() + " already exists in this hotel");
-        }
+        Specification<Room> spec = (root, query, cb) -> {
+            List<Predicate> predicates = new ArrayList<>();
 
-        Room room = new Room();
-        room.setHotelId(requestDto.getHotelId());
-        room.setRoomType(roomType);
-        room.setRoomNumber(requestDto.getRoomNumber());
-        room.setStatus(requestDto.getStatus() != null ? requestDto.getStatus() : RoomStatus.AVAILABLE);
+            if (hotelId != null) {
+                predicates.add(cb.equal(root.get("hotelId"), hotelId));
+            }
+            if (roomTypeId != null) {
+                predicates.add(cb.equal(root.get("roomType").get("id"), roomTypeId));
+            }
+            if (status != null) {
+                predicates.add(cb.equal(root.get("status"), status));
+            }
+            if (roomNumber != null && !roomNumber.trim().isEmpty()) {
+                predicates.add(cb.like(cb.lower(root.get("roomNumber")), "%" + roomNumber.toLowerCase() + "%"));
+            }
 
-        Room savedRoom = roomRepository.save(room);
-        return toResponseDto(savedRoom);
+            return cb.and(predicates.toArray(new Predicate[0]));
+        };
+
+        Page<Room> roomsPage = roomRepository.findAll(spec, pageable);
+
+        List<RoomResponseDto> content = roomsPage.getContent().stream()
+                .map(RoomResponseDto::fromEntity)
+                .collect(Collectors.toList());
+
+        return PageResponse.<RoomResponseDto>builder()
+                .content(content)
+                .pageNumber(roomsPage.getNumber())
+                .pageSize(roomsPage.getSize())
+                .totalElements(roomsPage.getTotalElements())
+                .totalPages(roomsPage.getTotalPages())
+                .isLast(roomsPage.isLast())
+                .build();
     }
 
     @Override
     @Transactional(readOnly = true)
     public RoomResponseDto getRoomById(Long id) {
-        Room room = roomRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Room not found with ID: " + id));
-        return toResponseDto(room);
+        Room room = findRoomById(id);
+        return RoomResponseDto.fromEntity(room);
     }
 
     @Override
-    @Transactional(readOnly = true)
-    public List<RoomResponseDto> getAllRooms() {
-        return roomRepository.findAll()
-                .stream()
-                .map(this::toResponseDto)
-                .toList();
-    }
+    @Transactional
+    public RoomResponseDto createRoom(RoomRequestDto requestDto) {
+        RoomType roomType = new RoomType();
+        roomType.setId(requestDto.getRoomTypeId());
 
-    @Override
-    @Transactional(readOnly = true)
-    public List<RoomResponseDto> getRoomsByHotelId(Long hotelId) {
-        return roomRepository.findByHotelId(hotelId)
-                .stream()
-                .map(this::toResponseDto)
-                .toList();
-    }
+        Room room = Room.builder()
+                .hotelId(requestDto.getHotelId())
+                .roomType(roomType)
+                .roomNumber(requestDto.getRoomNumber())
+                .status(requestDto.getStatus() != null ? requestDto.getStatus() : RoomStatus.AVAILABLE)
+                .isDeleted(false)
+                .build();
 
-    @Override
-    @Transactional(readOnly = true)
-    public List<RoomResponseDto> getRoomsByRoomTypeId(Long roomTypeId) {
-        return roomRepository.findByRoomTypeId(roomTypeId)
-                .stream()
-                .map(this::toResponseDto)
-                .toList();
-    }
-
-    @Override
-    @Transactional(readOnly = true)
-    public List<RoomResponseDto> getRoomsByHotelAndStatus(Long hotelId, RoomStatus status) {
-        return roomRepository.findByHotelIdAndStatus(hotelId, status)
-                .stream()
-                .map(this::toResponseDto)
-                .toList();
+        return RoomResponseDto.fromEntity(roomRepository.save(room));
     }
 
     @Override
     @Transactional
     public RoomResponseDto updateRoom(Long id, RoomRequestDto requestDto) {
-        Room room = roomRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Room not found with ID: " + id));
+        Room room = findRoomById(id);
 
-        RoomType roomType = roomtypeRepository.findById(requestDto.getRoomTypeId())
-                .orElseThrow(() -> new RuntimeException("RoomType not found with ID: " + requestDto.getRoomTypeId()));
-
-        // Check uniqueness only if room number or hotel changed
-        if (!room.getRoomNumber().equals(requestDto.getRoomNumber()) || !room.getHotelId().equals(requestDto.getHotelId())) {
-            if (roomRepository.existsByHotelIdAndRoomNumber(requestDto.getHotelId(), requestDto.getRoomNumber())) {
-                throw new RuntimeException("Room number " + requestDto.getRoomNumber() + " already exists in this hotel");
-            }
-        }
+        RoomType roomType = new RoomType();
+        roomType.setId(requestDto.getRoomTypeId());
 
         room.setHotelId(requestDto.getHotelId());
         room.setRoomType(roomType);
@@ -106,38 +118,28 @@ public class RoomServiceImpl implements RoomService {
             room.setStatus(requestDto.getStatus());
         }
 
-        Room updatedRoom = roomRepository.save(room);
-        return toResponseDto(updatedRoom);
+        return RoomResponseDto.fromEntity(roomRepository.save(room));
     }
 
     @Override
     @Transactional
-    public RoomResponseDto updateRoomStatus(Long id, RoomStatus status) {
-        Room room = roomRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Room not found with ID: " + id));
-
-        room.setStatus(status);
-        Room updatedRoom = roomRepository.save(room);
-        return toResponseDto(updatedRoom);
+    public RoomResponseDto updateRoomStatus(Long id, RoomStatusUpdateDto statusDto) {
+        Room room = findRoomById(id);
+        room.setStatus(statusDto.getStatus());
+        return RoomResponseDto.fromEntity(roomRepository.save(room));
     }
 
     @Override
     @Transactional
-    public void deleteRoom(Long id) {
-        if (!roomRepository.existsById(id)) {
-            throw new RuntimeException("Room not found with ID: " + id);
-        }
-        roomRepository.deleteById(id);
+    public void softDeleteRoom(Long id) {
+        Room room = findRoomById(id);
+        // Using Hibernate's @SQLDelete executes an UPDATE, or set manually:
+        room.setIsDeleted(true);
+        roomRepository.save(room);
     }
 
-    private RoomResponseDto toResponseDto(Room entity) {
-        return RoomResponseDto.builder()
-                .id(entity.getId())
-                .hotelId(entity.getHotelId())
-                .roomTypeId(entity.getRoomType() != null ? entity.getRoomType().getId() : null)
-                .roomTypeName(entity.getRoomType() != null ? entity.getRoomType().getName() : null)
-                .roomNumber(entity.getRoomNumber())
-                .status(entity.getStatus())
-                .build();
+    private Room findRoomById(Long id) {
+        return roomRepository.findById(id)
+                .orElseThrow(() -> new EntityNotFoundException("Room not found with ID: " + id));
     }
 }

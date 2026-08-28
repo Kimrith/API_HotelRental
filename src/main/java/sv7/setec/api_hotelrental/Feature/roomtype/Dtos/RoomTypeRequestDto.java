@@ -10,6 +10,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import sv7.setec.api_hotelrental.Feature.enums.RoomStatus;
 
 import java.math.BigDecimal;
 
@@ -37,6 +38,9 @@ public class RoomTypeRequestDto {
     @Min(value = 1, message = "Maximum guests must be at least 1")
     @Schema(description = "Maximum occupancy of guests", example = "2")
     private Integer maxGuests;
+
+    @Schema(description = "Room type availability status", example = "AVAILABLE")
+    private RoomStatus status;
 
     @Schema(description = "Detailed room type description", example = "Spacious ocean-view room with king bed and balcony")
     private String description;

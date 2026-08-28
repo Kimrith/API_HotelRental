@@ -1,0 +1,629 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< sv7.setec:API_HotelRental >----------------------
+[INFO] Building API_HotelRental 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ API_HotelRental ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ API_HotelRental ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 85 source files with javac [debug parameters release 17] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[16,47] cannot access sv7.setec.api_hotelrental.Feature.rooms.RoomRepository
+  bad source file: D:\setec year4\Java\API_HotelRental\src\main\java\sv7\setec\api_hotelrental\Feature\rooms\RoomRepository.java
+    file does not contain class sv7.setec.api_hotelrental.Feature.rooms.RoomRepository
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[17,54] cannot access sv7.setec.api_hotelrental.Feature.rooms.models.Room
+  bad source file: D:\setec year4\Java\API_HotelRental\src\main\java\sv7\setec\api_hotelrental\Feature\rooms\models\Room.java
+    file does not contain class sv7.setec.api_hotelrental.Feature.rooms.models.Room
+    Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/RoomRepository.java:[11,8] duplicate class: com.example.hotel.rooms.RoomRepository
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/models/Room.java:[17,8] duplicate class: com.example.hotel.rooms.models.Room
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[43,19] cannot find symbol
+  symbol:   class RoomRepository
+  location: class sv7.setec.api_hotelrental.Feature.bookings.BookingService
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomRequestDto.java:[3,38] cannot find symbol
+  symbol:   class RoomStatus
+  location: package com.example.hotel.rooms.models
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomRequestDto.java:[19,13] cannot find symbol
+  symbol:   class RoomStatus
+  location: class com.example.hotel.rooms.Dtos.RoomRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomResponseDto.java:[4,38] cannot find symbol
+  symbol:   class RoomStatus
+  location: package com.example.hotel.rooms.models
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomResponseDto.java:[15,13] cannot find symbol
+  symbol:   class RoomStatus
+  location: class com.example.hotel.rooms.Dtos.RoomResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/models/Room.java:[28,13] cannot find symbol
+  symbol:   class RoomType
+  location: class com.example.hotel.rooms.models.Room
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/models/Room.java:[36,13] cannot find symbol
+  symbol:   class RoomStatus
+  location: class com.example.hotel.rooms.models.Room
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomStatusUpdateDto.java:[3,38] cannot find symbol
+  symbol:   class RoomStatus
+  location: package com.example.hotel.rooms.models
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomStatusUpdateDto.java:[10,13] cannot find symbol
+  symbol:   class RoomStatus
+  location: class com.example.hotel.rooms.Dtos.RoomStatusUpdateDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/RoomServiceImpl.java:[7,38] cannot find symbol
+  symbol:   class RoomStatus
+  location: package com.example.hotel.rooms.models
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/RoomServiceImpl.java:[8,38] cannot find symbol
+  symbol:   class RoomType
+  location: package com.example.hotel.rooms.models
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[33,19] cannot find symbol
+  symbol:   class RoomRepository
+  location: class sv7.setec.api_hotelrental.Feature.roomtype.RoomtypeServiceImpl
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Config/JwtService.java:[34,32] cannot find symbol
+  symbol:   method getRole()
+  location: variable user of type sv7.setec.api_hotelrental.Feature.user.models.User
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Config/JwtService.java:[35,34] cannot find symbol
+  symbol:   method getId()
+  location: variable user of type sv7.setec.api_hotelrental.Feature.user.models.User
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Config/JwtService.java:[36,33] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type sv7.setec.api_hotelrental.Feature.user.models.User
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Exception/GlobalExceptionHandler.java:[19,58] cannot find symbol
+  symbol:   method builder()
+  location: class sv7.setec.api_hotelrental.Exception.ErrorResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[50,30] cannot find symbol
+  symbol:   method getCheckInDate()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[50,56] cannot find symbol
+  symbol:   method getCheckOutDate()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[53,47] cannot find symbol
+  symbol:   method getCustomerId()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[56,61] cannot find symbol
+  symbol:   method getCustomerId()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[61,55] cannot find symbol
+  symbol:   method getHotelId()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[64,62] cannot find symbol
+  symbol:   method getHotelId()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[68,64] cannot find symbol
+  symbol:   method getRoomTypeId()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[71,66] cannot find symbol
+  symbol:   method getRoomTypeId()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[75,22] cannot find symbol
+  symbol:   method getHotel()
+  location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[75,54] cannot find symbol
+  symbol:   method getId()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[83,21] cannot find symbol
+  symbol:   method getStatus()
+  location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[86,62] cannot find symbol
+  symbol:   method getStatus()
+  location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[92,22] cannot find symbol
+  symbol:   method getId()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[93,25] cannot find symbol
+  symbol:   method getId()
+  location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[98,22] cannot find symbol
+  symbol:   method getId()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[99,25] cannot find symbol
+  symbol:   method getId()
+  location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[100,24] cannot find symbol
+  symbol:   method getCheckInDate()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[101,24] cannot find symbol
+  symbol:   method getCheckOutDate()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[114,24] cannot find symbol
+  symbol:   method getCheckInDate()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[115,24] cannot find symbol
+  symbol:   method getCheckOutDate()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[118,41] cannot find symbol
+  symbol:   method getBasePrice()
+  location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[122,31] cannot find symbol
+  symbol:   method getDepositPercentage()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[122,70] cannot find symbol
+  symbol:   method getDepositPercentage()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[127,34] cannot find symbol
+  symbol:   method builder()
+  location: class sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[128,36] cannot find symbol
+  symbol:   method getCustomerId()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[129,33] cannot find symbol
+  symbol:   method getHotelId()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[130,36] cannot find symbol
+  symbol:   method getRoomTypeId()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[132,37] cannot find symbol
+  symbol:   method getCheckInDate()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[133,38] cannot find symbol
+  symbol:   method getCheckOutDate()
+  location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[197,41] cannot find symbol
+  symbol:   method getStatus()
+  location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[224,20] cannot find symbol
+  symbol:   method getStatus()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[231,9] cannot find symbol
+  symbol:   class Room
+  location: class sv7.setec.api_hotelrental.Feature.bookings.BookingService
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[238,46] cannot find symbol
+  symbol:   method getHotelId()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[246,55] cannot find symbol
+  symbol:   method getRoomTypeId()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[257,24] cannot find symbol
+  symbol:   method getCheckInDate()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[258,24] cannot find symbol
+  symbol:   method getCheckOutDate()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[268,16] cannot find symbol
+  symbol:   method setAssignedRoomId(java.lang.Long)
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[269,16] cannot find symbol
+  symbol:   method setStatus(sv7.setec.api_hotelrental.Feature.enums.BookingStatus)
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[280,46] cannot find symbol
+  symbol:   method getStatus()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[296,16] cannot find symbol
+  symbol:   method setStatus(sv7.setec.api_hotelrental.Feature.enums.BookingStatus)
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[334,34] cannot find symbol
+  symbol:   method builder()
+  location: class sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[335,28] cannot find symbol
+  symbol:   method getId()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[336,36] cannot find symbol
+  symbol:   method getCustomerId()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[337,33] cannot find symbol
+  symbol:   method getHotelId()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[338,36] cannot find symbol
+  symbol:   method getRoomTypeId()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[339,40] cannot find symbol
+  symbol:   method getAssignedRoomId()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[340,37] cannot find symbol
+  symbol:   method getCheckInDate()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[341,38] cannot find symbol
+  symbol:   method getCheckOutDate()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[342,36] cannot find symbol
+  symbol:   method getTotalPrice()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[343,39] cannot find symbol
+  symbol:   method getDepositAmount()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[344,32] cannot find symbol
+  symbol:   method getStatus()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[345,35] cannot find symbol
+  symbol:   method getCreatedAt()
+  location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[30,67] cannot find symbol
+  symbol:   method getUserId()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.favorite.Dtos.FavoriteRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[30,91] cannot find symbol
+  symbol:   method getHotelId()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.favorite.Dtos.FavoriteRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[34,37] cannot find symbol
+  symbol:   method builder()
+  location: class sv7.setec.api_hotelrental.Feature.favorite.models.Favorite
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[35,35] cannot find symbol
+  symbol:   method getUserId()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.favorite.Dtos.FavoriteRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[36,36] cannot find symbol
+  symbol:   method getHotelId()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.favorite.Dtos.FavoriteRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[54,35] cannot find symbol
+  symbol:   method builder()
+  location: class sv7.setec.api_hotelrental.Feature.favorite.Dtos.FavoriteResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[52,28] cannot find symbol
+  symbol:   method builder()
+  location: class sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[53,33] cannot find symbol
+  symbol:   method getName()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[54,40] cannot find symbol
+  symbol:   method getDescription()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[55,36] cannot find symbol
+  symbol:   method getAddress()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[56,33] cannot find symbol
+  symbol:   method getCity()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[57,37] cannot find symbol
+  symbol:   method getLatitude()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[58,38] cannot find symbol
+  symbol:   method getLongitude()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[59,46] cannot find symbol
+  symbol:   method getDepositPercentage()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[59,90] cannot find symbol
+  symbol:   method getDepositPercentage()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[60,35] cannot find symbol
+  symbol:   method getStatus()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[60,68] cannot find symbol
+  symbol:   method getStatus()
+  location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[78,67] cannot find symbol
+  symbol:   method getImages()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[80,24] cannot find symbol
+  symbol:   method getImages()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[81,62] cannot find symbol
+  symbol:   method builder()
+  location: class sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelResponseDto.ImageResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[89,32] cannot find symbol
+  symbol:   method builder()
+  location: class sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[90,26] cannot find symbol
+  symbol:   method getId()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[91,28] cannot find symbol
+  symbol:   method getName()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[92,35] cannot find symbol
+  symbol:   method getDescription()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[93,31] cannot find symbol
+  symbol:   method getAddress()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[94,28] cannot find symbol
+  symbol:   method getCity()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[95,32] cannot find symbol
+  symbol:   method getLatitude()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[96,33] cannot find symbol
+  symbol:   method getLongitude()
+  location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  2.509 s
+[INFO] Finished at: 2026-08-28T17:29:04+07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project API_HotelRental: Compilation failure: Compilation failure: 
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[16,47] cannot access sv7.setec.api_hotelrental.Feature.rooms.RoomRepository
+[ERROR]   bad source file: D:\setec year4\Java\API_HotelRental\src\main\java\sv7\setec\api_hotelrental\Feature\rooms\RoomRepository.java
+[ERROR]     file does not contain class sv7.setec.api_hotelrental.Feature.rooms.RoomRepository
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[17,54] cannot access sv7.setec.api_hotelrental.Feature.rooms.models.Room
+[ERROR]   bad source file: D:\setec year4\Java\API_HotelRental\src\main\java\sv7\setec\api_hotelrental\Feature\rooms\models\Room.java
+[ERROR]     file does not contain class sv7.setec.api_hotelrental.Feature.rooms.models.Room
+[ERROR]     Please remove or make sure it appears in the correct subdirectory of the sourcepath.
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/RoomRepository.java:[11,8] duplicate class: com.example.hotel.rooms.RoomRepository
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/models/Room.java:[17,8] duplicate class: com.example.hotel.rooms.models.Room
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[43,19] cannot find symbol
+[ERROR]   symbol:   class RoomRepository
+[ERROR]   location: class sv7.setec.api_hotelrental.Feature.bookings.BookingService
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomRequestDto.java:[3,38] cannot find symbol
+[ERROR]   symbol:   class RoomStatus
+[ERROR]   location: package com.example.hotel.rooms.models
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomRequestDto.java:[19,13] cannot find symbol
+[ERROR]   symbol:   class RoomStatus
+[ERROR]   location: class com.example.hotel.rooms.Dtos.RoomRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomResponseDto.java:[4,38] cannot find symbol
+[ERROR]   symbol:   class RoomStatus
+[ERROR]   location: package com.example.hotel.rooms.models
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomResponseDto.java:[15,13] cannot find symbol
+[ERROR]   symbol:   class RoomStatus
+[ERROR]   location: class com.example.hotel.rooms.Dtos.RoomResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/models/Room.java:[28,13] cannot find symbol
+[ERROR]   symbol:   class RoomType
+[ERROR]   location: class com.example.hotel.rooms.models.Room
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/models/Room.java:[36,13] cannot find symbol
+[ERROR]   symbol:   class RoomStatus
+[ERROR]   location: class com.example.hotel.rooms.models.Room
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomStatusUpdateDto.java:[3,38] cannot find symbol
+[ERROR]   symbol:   class RoomStatus
+[ERROR]   location: package com.example.hotel.rooms.models
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/Dtos/RoomStatusUpdateDto.java:[10,13] cannot find symbol
+[ERROR]   symbol:   class RoomStatus
+[ERROR]   location: class com.example.hotel.rooms.Dtos.RoomStatusUpdateDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/RoomServiceImpl.java:[7,38] cannot find symbol
+[ERROR]   symbol:   class RoomStatus
+[ERROR]   location: package com.example.hotel.rooms.models
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/rooms/RoomServiceImpl.java:[8,38] cannot find symbol
+[ERROR]   symbol:   class RoomType
+[ERROR]   location: package com.example.hotel.rooms.models
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[33,19] cannot find symbol
+[ERROR]   symbol:   class RoomRepository
+[ERROR]   location: class sv7.setec.api_hotelrental.Feature.roomtype.RoomtypeServiceImpl
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Config/JwtService.java:[34,32] cannot find symbol
+[ERROR]   symbol:   method getRole()
+[ERROR]   location: variable user of type sv7.setec.api_hotelrental.Feature.user.models.User
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Config/JwtService.java:[35,34] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable user of type sv7.setec.api_hotelrental.Feature.user.models.User
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Config/JwtService.java:[36,33] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type sv7.setec.api_hotelrental.Feature.user.models.User
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Exception/GlobalExceptionHandler.java:[19,58] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class sv7.setec.api_hotelrental.Exception.ErrorResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[50,30] cannot find symbol
+[ERROR]   symbol:   method getCheckInDate()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[50,56] cannot find symbol
+[ERROR]   symbol:   method getCheckOutDate()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[53,47] cannot find symbol
+[ERROR]   symbol:   method getCustomerId()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[56,61] cannot find symbol
+[ERROR]   symbol:   method getCustomerId()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[61,55] cannot find symbol
+[ERROR]   symbol:   method getHotelId()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[64,62] cannot find symbol
+[ERROR]   symbol:   method getHotelId()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[68,64] cannot find symbol
+[ERROR]   symbol:   method getRoomTypeId()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[71,66] cannot find symbol
+[ERROR]   symbol:   method getRoomTypeId()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[75,22] cannot find symbol
+[ERROR]   symbol:   method getHotel()
+[ERROR]   location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[75,54] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[83,21] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[86,62] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[92,22] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[93,25] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[98,22] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[99,25] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[100,24] cannot find symbol
+[ERROR]   symbol:   method getCheckInDate()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[101,24] cannot find symbol
+[ERROR]   symbol:   method getCheckOutDate()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[114,24] cannot find symbol
+[ERROR]   symbol:   method getCheckInDate()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[115,24] cannot find symbol
+[ERROR]   symbol:   method getCheckOutDate()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[118,41] cannot find symbol
+[ERROR]   symbol:   method getBasePrice()
+[ERROR]   location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[122,31] cannot find symbol
+[ERROR]   symbol:   method getDepositPercentage()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[122,70] cannot find symbol
+[ERROR]   symbol:   method getDepositPercentage()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[127,34] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[128,36] cannot find symbol
+[ERROR]   symbol:   method getCustomerId()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[129,33] cannot find symbol
+[ERROR]   symbol:   method getHotelId()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[130,36] cannot find symbol
+[ERROR]   symbol:   method getRoomTypeId()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[132,37] cannot find symbol
+[ERROR]   symbol:   method getCheckInDate()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[133,38] cannot find symbol
+[ERROR]   symbol:   method getCheckOutDate()
+[ERROR]   location: variable request of type sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[197,41] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable roomType of type sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[224,20] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[231,9] cannot find symbol
+[ERROR]   symbol:   class Room
+[ERROR]   location: class sv7.setec.api_hotelrental.Feature.bookings.BookingService
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[238,46] cannot find symbol
+[ERROR]   symbol:   method getHotelId()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[246,55] cannot find symbol
+[ERROR]   symbol:   method getRoomTypeId()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[257,24] cannot find symbol
+[ERROR]   symbol:   method getCheckInDate()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[258,24] cannot find symbol
+[ERROR]   symbol:   method getCheckOutDate()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[268,16] cannot find symbol
+[ERROR]   symbol:   method setAssignedRoomId(java.lang.Long)
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[269,16] cannot find symbol
+[ERROR]   symbol:   method setStatus(sv7.setec.api_hotelrental.Feature.enums.BookingStatus)
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[280,46] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[296,16] cannot find symbol
+[ERROR]   symbol:   method setStatus(sv7.setec.api_hotelrental.Feature.enums.BookingStatus)
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[334,34] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class sv7.setec.api_hotelrental.Feature.bookings.Dtos.BookingResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[335,28] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[336,36] cannot find symbol
+[ERROR]   symbol:   method getCustomerId()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[337,33] cannot find symbol
+[ERROR]   symbol:   method getHotelId()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[338,36] cannot find symbol
+[ERROR]   symbol:   method getRoomTypeId()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[339,40] cannot find symbol
+[ERROR]   symbol:   method getAssignedRoomId()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[340,37] cannot find symbol
+[ERROR]   symbol:   method getCheckInDate()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[341,38] cannot find symbol
+[ERROR]   symbol:   method getCheckOutDate()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[342,36] cannot find symbol
+[ERROR]   symbol:   method getTotalPrice()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[343,39] cannot find symbol
+[ERROR]   symbol:   method getDepositAmount()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[344,32] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[345,35] cannot find symbol
+[ERROR]   symbol:   method getCreatedAt()
+[ERROR]   location: variable booking of type sv7.setec.api_hotelrental.Feature.bookings.models.Booking
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[30,67] cannot find symbol
+[ERROR]   symbol:   method getUserId()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.favorite.Dtos.FavoriteRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[30,91] cannot find symbol
+[ERROR]   symbol:   method getHotelId()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.favorite.Dtos.FavoriteRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[34,37] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class sv7.setec.api_hotelrental.Feature.favorite.models.Favorite
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[35,35] cannot find symbol
+[ERROR]   symbol:   method getUserId()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.favorite.Dtos.FavoriteRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[36,36] cannot find symbol
+[ERROR]   symbol:   method getHotelId()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.favorite.Dtos.FavoriteRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/favorite/FavoriteService.java:[54,35] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class sv7.setec.api_hotelrental.Feature.favorite.Dtos.FavoriteResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[52,28] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[53,33] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[54,40] cannot find symbol
+[ERROR]   symbol:   method getDescription()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[55,36] cannot find symbol
+[ERROR]   symbol:   method getAddress()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[56,33] cannot find symbol
+[ERROR]   symbol:   method getCity()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[57,37] cannot find symbol
+[ERROR]   symbol:   method getLatitude()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[58,38] cannot find symbol
+[ERROR]   symbol:   method getLongitude()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[59,46] cannot find symbol
+[ERROR]   symbol:   method getDepositPercentage()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[59,90] cannot find symbol
+[ERROR]   symbol:   method getDepositPercentage()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[60,35] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[60,68] cannot find symbol
+[ERROR]   symbol:   method getStatus()
+[ERROR]   location: variable requestDto of type sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelRequestDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[78,67] cannot find symbol
+[ERROR]   symbol:   method getImages()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[80,24] cannot find symbol
+[ERROR]   symbol:   method getImages()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[81,62] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelResponseDto.ImageResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[89,32] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelResponseDto
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[90,26] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[91,28] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[92,35] cannot find symbol
+[ERROR]   symbol:   method getDescription()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[93,31] cannot find symbol
+[ERROR]   symbol:   method getAddress()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[94,28] cannot find symbol
+[ERROR]   symbol:   method getCity()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[95,32] cannot find symbol
+[ERROR]   symbol:   method getLatitude()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/hotels/HotelService.java:[96,33] cannot find symbol
+[ERROR]   symbol:   method getLongitude()
+[ERROR]   location: variable hotel of type sv7.setec.api_hotelrental.Feature.hotels.models.Hotel
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

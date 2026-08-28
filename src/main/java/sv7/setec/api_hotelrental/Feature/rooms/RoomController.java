@@ -1,85 +1,70 @@
 package sv7.setec.api_hotelrental.Feature.rooms;
 
-import io.swagger.v3.oas.annotations.Operation;
-import io.swagger.v3.oas.annotations.tags.Tag;
+import sv7.setec.api_hotelrental.Feature.rooms.Dtos.*;
+import sv7.setec.api_hotelrental.Feature.enums.RoomStatus;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import sv7.setec.api_hotelrental.Feature.enums.RoomStatus;
-import sv7.setec.api_hotelrental.Feature.rooms.Dtos.RoomRequestDto;
-import sv7.setec.api_hotelrental.Feature.rooms.Dtos.RoomResponseDto;
-
-import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/rooms")
 @RequiredArgsConstructor
-@Tag(name = "Rooms", description = "Endpoints for managing hotel rooms")
 public class RoomController {
 
     private final RoomService roomService;
 
-    @PostMapping
-    @Operation(summary = "Create a new room")
-    public ResponseEntity<RoomResponseDto> createRoom(@Valid @RequestBody RoomRequestDto requestDto) {
-        RoomResponseDto response = roomService.createRoom(requestDto);
-        return ResponseEntity.status(HttpStatus.CREATED).body(response);
-    }
-
+    // 1. Get all rooms
     @GetMapping
-    @Operation(summary = "Get all rooms")
-    public ResponseEntity<List<RoomResponseDto>> getAllRooms() {
-        return ResponseEntity.ok(roomService.getAllRooms());
+    public ResponseEntity<PageResponse<RoomResponseDto>> getAllRooms(
+            @RequestParam(required = false) Long hotelId,
+            @RequestParam(required = false) Long roomTypeId,
+            @RequestParam(required = false) RoomStatus status,
+            @RequestParam(required = false) String roomNumber,
+            @RequestParam(defaultValue = "0") int page,
+            @RequestParam(defaultValue = "10") int size,
+            @RequestParam(defaultValue = "id") String sortBy,
+            @RequestParam(defaultValue = "asc") String sortDir
+    ) {
+        return ResponseEntity.ok(roomService.getAllRooms(hotelId, roomTypeId, status, roomNumber, page, size, sortBy, sortDir));
     }
 
+    // 2. Get room by ID
     @GetMapping("/{id}")
-    @Operation(summary = "Get a room by its ID")
     public ResponseEntity<RoomResponseDto> getRoomById(@PathVariable Long id) {
         return ResponseEntity.ok(roomService.getRoomById(id));
     }
 
-    @GetMapping("/hotel/{hotelId}")
-    @Operation(summary = "Get all rooms belonging to a specific hotel")
-    public ResponseEntity<List<RoomResponseDto>> getRoomsByHotelId(@PathVariable Long hotelId) {
-        return ResponseEntity.ok(roomService.getRoomsByHotelId(hotelId));
+    // 3. Create room
+    @PostMapping
+    public ResponseEntity<RoomResponseDto> createRoom(@Valid @RequestBody RoomRequestDto requestDto) {
+        RoomResponseDto createdRoom = roomService.createRoom(requestDto);
+        return new ResponseEntity<>(createdRoom, HttpStatus.CREATED);
     }
 
-    @GetMapping("/room-type/{roomTypeId}")
-    @Operation(summary = "Get all rooms for a specific room type")
-    public ResponseEntity<List<RoomResponseDto>> getRoomsByRoomTypeId(@PathVariable Long roomTypeId) {
-        return ResponseEntity.ok(roomService.getRoomsByRoomTypeId(roomTypeId));
-    }
-
-    @GetMapping("/hotel/{hotelId}/status")
-    @Operation(summary = "Get rooms by hotel ID and availability status")
-    public ResponseEntity<List<RoomResponseDto>> getRoomsByHotelAndStatus(
-            @PathVariable Long hotelId,
-            @RequestParam RoomStatus status) {
-        return ResponseEntity.ok(roomService.getRoomsByHotelAndStatus(hotelId, status));
-    }
-
+    // 4. Edit room
     @PutMapping("/{id}")
-    @Operation(summary = "Update room details")
     public ResponseEntity<RoomResponseDto> updateRoom(
             @PathVariable Long id,
-            @Valid @RequestBody RoomRequestDto requestDto) {
+            @Valid @RequestBody RoomRequestDto requestDto
+    ) {
         return ResponseEntity.ok(roomService.updateRoom(id, requestDto));
     }
 
+    // 5. Patch room status
     @PatchMapping("/{id}/status")
-    @Operation(summary = "Update room status (AVAILABLE, BOOKED, MAINTENANCE, etc.)")
-    public ResponseEntity<RoomResponseDto> updateRoomStatus(
+    public ResponseEntity<RoomResponseDto> patchRoomStatus(
             @PathVariable Long id,
-            @RequestParam RoomStatus status) {
-        return ResponseEntity.ok(roomService.updateRoomStatus(id, status));
+            @Valid @RequestBody RoomStatusUpdateDto statusDto
+    ) {
+        return ResponseEntity.ok(roomService.updateRoomStatus(id, statusDto));
     }
 
+    // 6. Soft delete room
     @DeleteMapping("/{id}")
-    @Operation(summary = "Delete a room by its ID")
-    public ResponseEntity<Void> deleteRoom(@PathVariable Long id) {
-        roomService.deleteRoom(id);
+    public ResponseEntity<Void> softDeleteRoom(@PathVariable Long id) {
+        roomService.softDeleteRoom(id);
         return ResponseEntity.noContent().build();
     }
 }

@@ -1,0 +1,50 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< sv7.setec:API_HotelRental >----------------------
+[INFO] Building API_HotelRental 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ API_HotelRental ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ API_HotelRental ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 86 source files with javac [debug parameters release 17] to target\classes
+[INFO] Some messages have been simplified; recompile with -Xdiags:verbose to get full output
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[83,34] incomparable types: sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus and sv7.setec.api_hotelrental.Feature.enums.RoomStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[197,54] incomparable types: sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus and sv7.setec.api_hotelrental.Feature.enums.RoomStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[85,78] incompatible types: bad type in conditional expression
+    sv7.setec.api_hotelrental.Feature.enums.RoomStatus cannot be converted to sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[120,32] incomparable types: sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus and sv7.setec.api_hotelrental.Feature.enums.RoomStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[201,52] incompatible types: sv7.setec.api_hotelrental.Feature.enums.RoomStatus cannot be converted to sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[214,28] incompatible types: sv7.setec.api_hotelrental.Feature.enums.RoomStatus cannot be converted to sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[234,41] incompatible types: sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus cannot be converted to sv7.setec.api_hotelrental.Feature.enums.RoomStatus
+[INFO] 7 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.230 s
+[INFO] Finished at: 2026-08-28T17:30:23+07:00
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project API_HotelRental: Compilation failure: Compilation failure: 
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[83,34] incomparable types: sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus and sv7.setec.api_hotelrental.Feature.enums.RoomStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/bookings/BookingService.java:[197,54] incomparable types: sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus and sv7.setec.api_hotelrental.Feature.enums.RoomStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[85,78] incompatible types: bad type in conditional expression
+[ERROR]     sv7.setec.api_hotelrental.Feature.enums.RoomStatus cannot be converted to sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[120,32] incomparable types: sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus and sv7.setec.api_hotelrental.Feature.enums.RoomStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[201,52] incompatible types: sv7.setec.api_hotelrental.Feature.enums.RoomStatus cannot be converted to sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[214,28] incompatible types: sv7.setec.api_hotelrental.Feature.enums.RoomStatus cannot be converted to sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus
+[ERROR] /D:/setec year4/Java/API_HotelRental/src/main/java/sv7/setec/api_hotelrental/Feature/roomtype/RoomtypeServiceImpl.java:[234,41] incompatible types: sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus cannot be converted to sv7.setec.api_hotelrental.Feature.enums.RoomStatus
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

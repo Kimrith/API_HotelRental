@@ -1,19 +1,21 @@
 package sv7.setec.api_hotelrental.Feature.rooms.models;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.SQLRestriction;
 import sv7.setec.api_hotelrental.Feature.enums.RoomStatus;
 import sv7.setec.api_hotelrental.Feature.roomtype.models.RoomType;
 
 @Entity
 @Table(name = "rooms")
-@Data
-@Builder
+@Getter
+@Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
+@SQLDelete(sql = "UPDATE rooms SET is_deleted = true WHERE id = ?")
+@SQLRestriction("is_deleted = false")
 public class Room {
 
     @Id
@@ -35,43 +37,7 @@ public class Room {
     @Builder.Default
     private RoomStatus status = RoomStatus.AVAILABLE;
 
-    public RoomStatus getStatus() {
-        return status;
-    }
-
-    public void setStatus(RoomStatus status) {
-        this.status = status;
-    }
-
-    public String getRoomNumber() {
-        return roomNumber;
-    }
-
-    public void setRoomNumber(String roomNumber) {
-        this.roomNumber = roomNumber;
-    }
-
-    public RoomType getRoomType() {
-        return roomType;
-    }
-
-    public void setRoomType(RoomType roomType) {
-        this.roomType = roomType;
-    }
-
-    public Long getHotelId() {
-        return hotelId;
-    }
-
-    public void setHotelId(Long hotelId) {
-        this.hotelId = hotelId;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    @Column(name = "is_deleted", nullable = false)
+    @Builder.Default
+    private Boolean isDeleted = false;
 }

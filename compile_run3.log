@@ -1,0 +1,20 @@
+﻿[INFO] Scanning for projects...
+[INFO] 
+[INFO] ---------------------< sv7.setec:API_HotelRental >----------------------
+[INFO] Building API_HotelRental 0.0.1-SNAPSHOT
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ API_HotelRental ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ API_HotelRental ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 94 source files with javac [debug parameters release 17] to target\classes
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  4.200 s
+[INFO] Finished at: 2026-08-28T17:38:26+07:00
+[INFO] ------------------------------------------------------------------------

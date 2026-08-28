@@ -1,4 +1,4 @@
-package sv7.setec.api_hotelrental.Feature.review.Dtos;
+package sv7.setec.api_hotelrental.Feature.booking_audits.Dtos;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,14 +10,12 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ReviewResponseDto {
+public class BookingAuditResponseDto {
     private Long id;
     private Long bookingId;
-    private Long userId;
-    private String username;
-    private Integer hotelId;
-    private String hotelName;
-    private Integer rating;
-    private String comment;
+    private Long actorUserId;
+    private String actorUsername;
+    private String action;
+    private String reason;
     private LocalDateTime createdAt;
 }
