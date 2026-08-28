@@ -46,7 +46,8 @@ public class HotelService {
         }
 
         User owner = userRepository.findByUsername(auth.getName())
-                .orElseThrow(() -> new RuntimeException("Owner not found for: " + auth.getName()));
+                .orElseGet(() -> userRepository.findByEmail(auth.getName())
+                        .orElseThrow(() -> new RuntimeException("Owner not found for: " + auth.getName())));
 
         Hotel hotel = Hotel.builder()
                 .name(requestDto.getName())
