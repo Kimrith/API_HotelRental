@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import sv7.setec.api_hotelrental.Feature.enums.RoomStatus;
 import sv7.setec.api_hotelrental.Feature.enums.RoomTypeStatus;
 import sv7.setec.api_hotelrental.Feature.hotels.models.Hotel;
 
@@ -45,6 +44,9 @@ public class RoomType {
 
     @Column(name = "description", columnDefinition = "TEXT")
     private String description;
+
+    @Column(name = "is_deleted")
+    private Boolean isDeleted = false;
 
     @Column(name = "search_keywords", columnDefinition = "TEXT")
     private String searchKeywords;
