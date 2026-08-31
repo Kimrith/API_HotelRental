@@ -14,7 +14,7 @@ import org.springframework.security.web.authentication.UsernamePasswordAuthentic
 
 @Configuration
 @EnableWebSecurity
-@EnableMethodSecurity
+// @EnableMethodSecurity // Disabled for local development to allow all requests without roles check
 @RequiredArgsConstructor
 public class SecurityConfig {
 
@@ -44,9 +44,9 @@ public class SecurityConfig {
                         .requestMatchers("/api/v1/auth/**").permitAll()
                         .requestMatchers("/api/v1/users/**").permitAll() // Add if your register endpoint is here
 
-                        .anyRequest().authenticated()
+                        .anyRequest().permitAll() // Permit all requests for local development
                 )
-                .authenticationProvider(authenticationProvider)
+                 .authenticationProvider(authenticationProvider)
                 .addFilterBefore(jwtAuthFilter, UsernamePasswordAuthenticationFilter.class);
 
         return http.build();
