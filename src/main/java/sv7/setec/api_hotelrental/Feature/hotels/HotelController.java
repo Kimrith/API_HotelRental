@@ -11,6 +11,7 @@ import sv7.setec.api_hotelrental.Feature.hotels.Dtos.HotelResponseDto;
 
 import java.util.List;
 
+@CrossOrigin(originPatterns = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/api/v1/hotels")
 @RequiredArgsConstructor
