@@ -46,7 +46,7 @@ public class BakongService {
         // Tag 29: Merchant Account Info (Bakong Account)
         String bakongId = bakongConfig.getBakongId();
         String acquiringId = bakongConfig.getAcquiringId() != null ? bakongConfig.getAcquiringId() : bakongId;
-        String sub29 = formatTag("00", bakongId) + formatTag("01", acquiringId);
+        String sub29 = formatTag("00", bakongId);
         sb.append(formatTag("29", sub29));
 
         // Tag 52: Merchant Category Code (5999)
@@ -67,6 +67,12 @@ public class BakongService {
             String sub62 = formatTag("01", billNumber.trim());
             sb.append(formatTag("62", sub62));
         }
+
+                // Tag 99: Timestamp & Expiration (Required for dynamic KHQR)
+        long now = System.currentTimeMillis();
+        long exp = now + (15 * 60 * 1000L);
+        String sub99 = formatTag("00", String.valueOf(now)) + formatTag("01", String.valueOf(exp));
+        sb.append(formatTag("99", sub99));
 
         // Tag 63: CRC16 Checksum
         String rawForCrc = sb.toString() + "6304";
